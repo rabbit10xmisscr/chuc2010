@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 🌸</title>
+  <meta name="description" content="Trang web thiệp chúc mừng ngày 20/10 dành tặng bạn bè, những người phụ nữ tuyệt vời!">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas hoa rơi & trái tim -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- Nút điều khiển âm nhạc nền -->
+  <div class="audio-control" id="musicToggleBtn" title="Bật/Tắt nhạc nền nhẹ nhàng">
+    <div class="sound-wave" id="soundWave">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <span class="music-label">Bật nhạc 🎵</span>
+  </div>
+
+  <main class="app-container">
+    <!-- Header Hero -->
+    <header class="hero-section">
+      <div class="badge-tag">
+        <i class="fa-solid fa-heart"></i> 20 Tháng 10 - Ngày Phụ Nữ Việt Nam
+      </div>
+      <h1 class="main-title">
+        Gửi Ngàn Yêu Thương Đến <span class="highlight-name" id="displayRecipient">Bạn Của Tôi</span> ✨
+      </h1>
+      <p class="subtitle">
+        Cầu chúc bạn luôn rạng rỡ như ánh bình minh, xinh đẹp như những đóa hồng ngát hương và luôn ngập tràn hạnh phúc mỗi ngày!
+      </p>
+    </header>
+
+    <!-- Khu vực Phong bì thư tương tác (Interactive 3D Envelope) -->
+    <section class="envelope-wrapper">
+      <div class="envelope-box" id="envelopeBox">
+        <div class="envelope-flap" id="envelopeFlap"></div>
+        <div class="envelope-pocket"></div>
+        
+        <!-- Lá thư bên trong phong bì -->
+        <div class="letter-card" id="letterCard">
+          <div class="letter-inner">
+            <div class="letter-decor top-left">🌸</div>
+            <div class="letter-decor top-right">✨</div>
+            <div class="letter-decor bottom-left">💐</div>
+            <div class="letter-decor bottom-right">💖</div>
+
+            <div class="letter-stamp">
+              <span class="stamp-date">20.10</span>
+              <span class="stamp-icon"><i class="fa-solid fa-heart"></i></span>
+            </div>
+
+            <h3 class="letter-salutation">Thân gửi <span class="letter-name" id="letterRecipient">bạn yêu</span>,</h3>
+            
+            <p class="letter-body" id="letterBody">
+              Nhân ngày 20/10, chúc bạn một ngày thật ngọt ngào, rộn rã tiếng cười và luôn xinh tươi! Mong bạn luôn tự tin, yêu đời, đạt được mọi ước mơ đã ấp ủ và luôn là phiên bản hạnh phúc nhất của chính mình nhé! 🥰
+            </p>
+
+            <div class="letter-signature">
+              <span class="sig-text">Người gửi:</span>
+              <span class="sig-name" id="letterSender">Một người bạn chân thành</span>
+              <div class="sig-heart"><i class="fa-solid fa-sparkles"></i> 💐 💖</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="envelope-actions">
+        <button class="btn btn-primary" id="openEnvelopeBtn">
+          <i class="fa-solid fa-envelope-open-text"></i> <span id="openBtnText">Bấm để mở phong bì thư</span>
+        </button>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Pháo hoa & Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Made with <i class="fa-solid fa-heart beat"></i> to celebrate Vietnamese Women's Day 20/10</p>
+      <p class="copy-hint">Gửi link trang này cho bạn bè để lan tỏa nụ cười và năng lượng tích cực nhé!</p>
+    </footer>
+  </main>
+
+  <!-- Toast thông báo nhỏ xinh -->
+  <div class="toast-message" id="toastMessage">Đã sao chép vào bộ nhớ tạm! 🎉</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
