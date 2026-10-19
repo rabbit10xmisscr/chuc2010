@@ -369,7 +369,28 @@ function initMusicBox() {
     startMusicLoop();
   }
 
-  toggleBtn.addEventListener('click', () => {
+  // Khởi động nhạc mặc định
+  startMusic();
+
+  // Xử lý Autoplay Policy của trình duyệt: Nếu bị suspended, tự động kích hoạt ngay khi chạm/click/cuộn trang
+  const resumeOnFirstInteraction = () => {
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    if (!isPlaying) {
+      startMusic();
+    }
+    ['click', 'pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(evt => {
+      document.removeEventListener(evt, resumeOnFirstInteraction);
+    });
+  };
+
+  ['click', 'pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(evt => {
+    document.addEventListener(evt, resumeOnFirstInteraction, { once: true, passive: true });
+  });
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     if (isPlaying) {
       stopMusic();
     } else {
